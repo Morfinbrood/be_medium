@@ -1,5 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Это ваш файл схемы Prisma,
+// узнайте больше об этом в документации: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -8,4 +8,28 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  admin
+  user
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique
+  password    String
+  role        UserRole
+  posts       Post[]
+  viewedPosts Post[]   @relation("ViewedPosts")
+}
+
+model Post {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String
+  author  User   @relation(fields: [userId], references: [id])
+  viewers User[] @relation("ViewedPosts")
+  userId  Int
 }
