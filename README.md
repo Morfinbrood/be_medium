@@ -66,19 +66,19 @@ interface Post {
 
 Backend Features:
 
-Authorization (access token + refresh token)
-User creation (Admin only)
-Get a list of users (Admin only) + pagination via offsets
-Get a single user (Admin only)
-Post creation (Admin and user)
-Get a list of posts (Admin and user) + pagination via cursors
-Get a single post (Admin and user) (record the requester as a viewer)
-Each request implies validation of passed parameters, error handling, and clear error responses in case of errors.
+1. Authorization (access token + refresh token)
+2. User creation (Admin only)
+3. Get a list of users (Admin only) + pagination via offsets
+4. Get a single user (Admin only)
+5. Post creation (Admin and user)
+6. Get a list of posts (Admin and user) + pagination via cursors
+7. Get a single post (Admin and user) (record the requester as a viewer)
+8. Each request implies validation of passed parameters, error handling, and clear error responses in case of errors.
 
 Mandatory technical stack:
 
-NestJS framework
-Database: PostgreSQL with PrismaJS
-API: GraphQL (Code-first)
-Wrap the entire project in Docker
-It will be a plus if you cover the Post module with unit tests.
+- NestJS framework
+- Database: PostgreSQL with PrismaJS
+- API: GraphQL (Code-first)
+- Wrap the entire project in Docker
+- It will be a plus if you cover the Post module with unit tests.
