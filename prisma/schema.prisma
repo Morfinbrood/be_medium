@@ -1,6 +1,3 @@
-// Это ваш файл схемы Prisma,
-// узнайте больше об этом в документации: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }

@@ -6,6 +6,8 @@ NestJS, TS, PrismaJS, PostgreSQL, Docker
 
 ```bash
 $ npm install
+
+npx prisma migrate dev         
 ```
 
 ## Running the app
